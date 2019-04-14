@@ -404,3 +404,12 @@ page{
 }
 
 ```
+
+
+编译效果：
+
+![image](http://youdao.mikezz.cn/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190415003822.png)
+
+源码：
+
+[https://github.com/fungkamwah/wxapp_demo](https://github.com/fungkamwah/wxapp_demo)
