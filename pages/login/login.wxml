@@ -1,0 +1,77 @@
+<!--pages/login/login.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{tips}}</view>
+    <loading hidden="{{hide}}">加载中...</loading>
+
+    <block wx:if="{{!isLogin}}">
+      <view class="weui-cells__title">登录</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">账号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="输入账号" value="{{username}}" bindinput="usernameInput" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">密码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="password" placeholder="输入密码" bindinput="passwordInput" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__tips">请使用管理员为您分配的账号和密码进行绑定</view>
+
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="submit">确定</button>
+      </view>
+    </block>
+
+    <block wx:if="{{isLogin}}">
+      <view class="weui-cells__title">账号信息</view>
+      <view class="weui-cells weui-cells_after-title">
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">工厂名称</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" disabled="true" value="{{factoryName}}" />
+          </view>
+        </view>
+
+
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">用户账号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" disabled="true" value="{{userNum}}" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">用户名称</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" disabled="true" value="{{userName}}" />
+          </view>
+        </view>
+
+      </view>
+      <!--<view class="weui-cells__tips">请使用管理员为您分配的账号和密码进行登录</view>-->
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="warn" bindtap="logout">退出登录</button>
+
+        <button class="weui-btn" type="default" bindtap="goBack">返回</button>
+      </view>
+    </block>
+  </view>
+</view>
